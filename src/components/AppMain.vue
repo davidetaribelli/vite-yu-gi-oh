@@ -1,6 +1,12 @@
 <script>
+import { store } from '../data/store'
 export default {
-    name: "AppMain"
+    name: "AppMain",
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
@@ -11,15 +17,15 @@ export default {
                 <h4>Found 39 cards</h4>
             </div>
             <div class="boxMain">
-                <div class="card">
+                <div v-for="element, i in store.cards" class="card">
                     <div class="content">
-                        <img src="" alt="">
+                        <img :src="element.card_images[0].image_url" :alt="element.name">
                     </div>
                     <div class="title">
-                        <h6>nome carta</h6>
+                        <h5>{{ element.name }}</h5>
                     </div>
                     <div class="type">
-                        <small>tipo di carta</small>
+                        <small>{{ element.type }}</small>
                     </div>
                 </div>
             </div>
@@ -53,8 +59,17 @@ main {
             .card {
                 width: calc(100% / 5 - 1em);
                 height: 388px;
-                background-color: red;
                 text-align: center;
+                background-color: #d48f38;
+                line-height: 1.5rem;
+
+                img {
+                    width: 100%;
+                }
+
+                .title {
+                    color: white;
+                }
             }
         }
     }

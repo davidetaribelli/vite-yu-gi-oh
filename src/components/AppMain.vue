@@ -11,21 +11,17 @@ export default {
                 <h4>Found 39 cards</h4>
             </div>
             <div class="boxMain">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+                <div class="card">
+                    <div class="content">
+                        <img src="" alt="">
+                    </div>
+                    <div class="title">
+                        <h6>nome carta</h6>
+                    </div>
+                    <div class="type">
+                        <small>tipo di carta</small>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -58,6 +54,7 @@ main {
                 width: calc(100% / 5 - 1em);
                 height: 388px;
                 background-color: red;
+                text-align: center;
             }
         }
     }

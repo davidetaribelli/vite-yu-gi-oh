@@ -14,9 +14,9 @@ export default {
 
 <template>
     <main>
-        <select @change="searhType" v-model="currentArchetype">
-            <option v-for="cardType in store.cards" :value="cardType.archetype">
-                {{ cardType.archetype }}
+        <select>
+            <option v-for="cardType in store.archetypes" :value="cardType.archetype_name">
+                {{ cardType.archetype_name }}
             </option>
         </select>
         <div class="container">

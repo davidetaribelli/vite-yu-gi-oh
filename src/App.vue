@@ -12,13 +12,18 @@ export default {
   },
   data() {
     return {
-      store
+      store,
     }
   },
   mounted() {
     axios.get(this.store.urlAPI).then(cards => {
       this.store.cards = cards.data.data
-      console.log(this.store.cards);
+      console.log("Carte in generale", this.store.cards);
+    })
+
+    axios.get(this.store.urlArchetype).then(archetypes => {
+      this.store.archetypes = archetypes.data
+      console.log("Archetype", this.store.archetypes);
     })
   }
 }

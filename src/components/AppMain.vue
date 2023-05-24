@@ -7,13 +7,14 @@ export default {
         return {
             store,
             currentArchetypes: null,
+            counterCard: 0
         }
     },
     methods: {
         searchArchetypes() {
             axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${this.currentArchetypes}`).then(r => {
                 this.store.cards = r.data.data
-                console.log(this.store.cards)
+                this.counterCard = this.store.cards.length
             })
         }
     }
@@ -29,7 +30,7 @@ export default {
         </select>
         <div class="container">
             <div class="mainHead">
-                <h4>Found 40 cards</h4>
+                <h4>Found {{ counterCard }} cards</h4>
             </div>
             <div class="boxMain">
                 <div v-for="element, i in store.cards" class="card">

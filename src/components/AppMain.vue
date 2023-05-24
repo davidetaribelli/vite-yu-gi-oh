@@ -6,15 +6,21 @@ export default {
     data() {
         return {
             store,
+            currentArchetypes: null,
         }
     },
+    methods: {
+        searchArchetypes() {
+            console.log(this.currentArchetypes)
+        }
+    }
 
 }
 </script>
 
 <template>
     <main>
-        <select>
+        <select @change="searchArchetypes" v-model="currentArchetypes">
             <option v-for="cardType in store.archetypes" :value="cardType.archetype_name">
                 {{ cardType.archetype_name }}
             </option>

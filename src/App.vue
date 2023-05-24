@@ -18,12 +18,10 @@ export default {
   mounted() {
     axios.get(this.store.urlAPI).then(cards => {
       this.store.cards = cards.data.data
-      console.log("Carte in generale", this.store.cards);
     })
 
     axios.get(this.store.urlArchetype).then(archetypes => {
       this.store.archetypes = archetypes.data
-      console.log("Archetype", this.store.archetypes);
     })
   }
 }

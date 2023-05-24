@@ -11,10 +11,12 @@ export default {
     },
     methods: {
         searchArchetypes() {
-            console.log(this.currentArchetypes)
+            axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${this.currentArchetypes}`).then(r => {
+                this.store.cards = r.data.data
+                console.log(this.store.cards)
+            })
         }
     }
-
 }
 </script>
 

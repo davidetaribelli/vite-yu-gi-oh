@@ -6,8 +6,6 @@ export default {
     data() {
         return {
             store,
-            arrayArchetype: [],
-            currentArchetype: null
         }
     },
 

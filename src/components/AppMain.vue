@@ -76,7 +76,7 @@ main {
         }
 
         .boxMain {
-            @include flex(row, space-between, center, wrap);
+            @include flex(row, start, center, wrap);
             gap: 1em;
 
             .card {
